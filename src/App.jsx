@@ -154,9 +154,7 @@ function App() {
                       Vehicles (AAVs) purpose-built for hyper-scale production
                       and mass employment. Combining advanced software with a
                       simplified design, Barracuda delivers a highly
-                      intelligent, low-cost, and flexible mission system. nd
-                      flexible mission system. nd flexible mission system. nd
-                      flexible mission system.{" "}
+                      intelligent, low-cost, and flexible mission system.{" "}
                     </p>
                   </div>
 
