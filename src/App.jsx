@@ -3,13 +3,21 @@
 import React from "react";
 import plane from "./-.png";
 import Nav from "./nav";
+import { useState } from "react";
 
 function App() {
+	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+	const handleMouseEnter = () => {
+		setIsDropdownOpen(true);
+	};
+
+	const handleMouseLeave = () => {
+		setIsDropdownOpen(false);
+	};
 	return (
-		<div className="grid grid-cols-[200px_1fr_200px] h-screen">
-			<Nav />
+		<div className="flex flex-col ">
 			{/* Left Sidebar */}
-			<aside className="bg-gray-100 pt-16 border-r border-gray-300">
+			<aside className=" fixed pt-24  w-[200px] h-full border-r-2 ">
 				<ul className=" flex flex-col gap-9 text-xl ml-8 font-semibold">
 					<li className=" flex flex-row gap-4">
 						<svg
@@ -83,10 +91,27 @@ function App() {
 						</svg>
 						Explore
 					</li>
-					<li>+ Create Group</li>
+					<li>
+						<div
+							onMouseEnter={() => setIsDropdownOpen(true)}
+							onMouseLeave={() => setIsDropdownOpen(false)}
+							className="cursor-pointer ">
+							+ Group
+						</div>
+						{isDropdownOpen && (
+							<ul
+								className=" left-7 w-40   rounded shadow-sm text-lg "
+								onMouseEnter={handleMouseEnter}
+								onMouseLeave={handleMouseLeave}>
+								<li className="py-2 px-4 hover:bg-slate-200">Sub Item 1</li>
+								<li className="py-2 px-4  hover:bg-slate-200">Sub Item 2</li>
+								<li className="py-2 px-4  hover:bg-slate-200">Sub Item 3</li>
+							</ul>
+						)}
+					</li>
 				</ul>
 			</aside>
-			<main className="p-4">
+			<main className="p-4 w-[1000px] ml-48">
 				{/* Navbar */}
 
 				<nav className="bg-gray-800 flex justify-start items-center  text-white p-4 mb-6 w-full m-0">
@@ -121,32 +146,30 @@ function App() {
 
 				{/* Main Content Section */}
 				<section className="flex flex-col  items-center justify-center h-screen px-4">
-					<div className="h-32"></div>
-					<div className="flex flex-row ">
-						<div classNAme="text-center pl-8">
+					<div className="h-4 w-full border-b "></div>
+
+					<div className="flex flex-row mt-6  border-b-2">
+						<div>
 							<p className="font-semibold text-2xl"># Aviation</p>
 
 							<h1 className="text-3xl  font-semibold">
 								Purpose-Built to bring.......
 							</h1>
 
-							<div className="overflow-hidden">
-								<h2
-									id="mern"
-									className="text-blue-500 text-lg md:text-4xl mt-4">
-									MERN Stack Developer
-								</h2>
-							</div>
-							<div className="mt-4 font-mono font-light text-md md:text-xl">
+							<div className="mt-4 font-mono font-light text-md ">
 								<p>
-									{" "}
-									Passionate MERN Stack Developer skilled in building dynamic,
+									<p>
+										Passionate MERN Stack Developer skilled in building dynamic,
+									</p>
+									<p>
+										high-performance web applications. You are welcomed to my
+									</p>
+									repositry on github for projects overveiwe jdioos jswnwdk d
+									ewdme m,e n wns n
 								</p>
-								<p>high-performance web applications. You are welcomed to my</p>
-								<p>repositry on github for projects overveiw</p>
 							</div>
-							<div className="flex justify-center md:justify-start gap-5 pt-4">
-								<a href="https://github.com/coderX56">
+							<div className="flex m-6 gap-5 ">
+								<a href="/">
 									<svg
 										width="21"
 										height="18"
@@ -159,7 +182,7 @@ function App() {
 										/>
 									</svg>
 								</a>
-								<a href="https://www.linkedin.com/in/aman-tiwari-81174419a/">
+								<a href="/">
 									<svg
 										width="22"
 										height="21"
@@ -186,12 +209,27 @@ function App() {
 										/>
 									</svg>
 								</a>
+								<a href="/">
+									<svg
+										width="14"
+										height="17"
+										viewBox="0 0 14 17"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											fill-rule="evenodd"
+											clip-rule="evenodd"
+											d="M4.02579 0.145467H10.8075C11.6043 0.104849 12.3852 0.371166 12.9777 0.885641C13.5703 1.40012 13.9258 2.12046 13.9659 2.88768V16.0018C13.967 16.2644 13.853 16.5154 13.652 16.6929C13.451 16.8705 13.1816 16.9582 12.9099 16.9345C12.6718 16.9346 12.4403 16.8592 12.2511 16.72L8.05609 13.6513C7.65995 13.3653 7.11526 13.3653 6.71912 13.6513L2.56288 16.72C2.37896 16.8554 2.15491 16.9305 1.92345 16.9345C1.65177 16.9582 1.38232 16.8705 1.1813 16.6929C0.980284 16.5154 0.866332 16.2644 0.86744 16.0018V2.88768C0.907507 2.12046 1.26305 1.40012 1.8556 0.885641C2.44815 0.371166 3.22899 0.104849 4.02579 0.145467ZM8.95709 12.5414L12.4933 15.153L12.4739 2.88768C12.3822 2.0745 11.6351 1.47919 10.7882 1.54456H4.00642C3.15952 1.47919 2.41236 2.0745 2.32067 2.88768V15.153L5.85687 12.5414C6.77252 11.8697 8.04144 11.8697 8.95709 12.5414Z"
+											fill="black"
+										/>
+									</svg>
+								</a>
 							</div>
 						</div>
-						<div class="flex justify-center mt-10 md:mt-0 overflow-hidden">
+						<div class="flex justify-center mt-3  overflow-hidden ">
 							<img
 								src={plane}
-								className="rounded-full h-44 w-44 md:h-96 md:w-96"
+								className="rounded-full h-full w-96"
 								alt="Avatar"
 							/>
 						</div>
@@ -200,9 +238,9 @@ function App() {
 			</main>
 
 			{/* Right Sidebar */}
-			<aside className="bg-gray-100 p-4 border-l border-gray-300">
+			<aside className=" fixed  p-4  border-gray-300 w-[200px] ml-[1200px] h-full">
 				<h3 className="text-lg font-semibold mb-4">Right Sidebar</h3>
-				<ul>
+				<ul className="mt-10 text-xl font-semibold  ">
 					<li className="mb-2">Widget 1</li>
 					<li className="mb-2">Widget 2</li>
 					<li className="mb-2">Widget 3</li>
