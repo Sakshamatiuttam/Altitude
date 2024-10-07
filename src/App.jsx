@@ -108,9 +108,9 @@ function App() {
 									className="absolute left-7 w-48 mt-2 rounded shadow-md text-lg border bg-white"
 									onMouseEnter={handleMouseEnter}
 									onMouseLeave={handleMouseLeave}>
-									<li className="py-2 px-4 hover:bg-gray-100">Sub Item 1</li>
-									<li className="py-2 px-4 hover:bg-gray-100">Sub Item 2</li>
-									<li className="py-2 px-4 hover:bg-gray-100">Sub Item 3</li>
+									<li className="py-2 px-4 hover:bg-gray-100">Group 1</li>
+									<li className="py-2 px-4 hover:bg-gray-100">Group 2</li>
+									<li className="py-2 px-4 hover:bg-gray-100">Group 3</li>
 								</ul>
 							)}
 						</li>
