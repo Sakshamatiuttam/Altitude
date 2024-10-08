@@ -7,6 +7,7 @@ import { BiCommentDetail } from "react-icons/bi";
 import { GrNotification } from "react-icons/gr";
 import { HiOutlineUser } from "react-icons/hi2";
 import logo from "./logos/alitbook.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 	const [input, setInput] = useState("");
@@ -34,7 +35,9 @@ const Navbar = () => {
 			<div className="flex w-[350px] items-center justify-end space-x-6 ">
 				<BiCommentDetail size={"20px"} className="cursor-pointer" />
 				<GrNotification size={"20px"} className="cursor-pointer" />
-				<HiOutlineUser size={"20px"} className="cursor-pointer" />
+				<Link to="/login">
+					<HiOutlineUser size={"20px"} className="cursor-pointer" />
+				</Link>
 				<div className="bg-black p-5 flex  items-center text-white">
 					<GiHamburgerMenu className="cursor-pointer" size={"20px"} />
 				</div>
